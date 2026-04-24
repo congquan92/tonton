@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +19,7 @@ public class Category {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "parent")
     private List<Category> children;
 
@@ -30,7 +31,7 @@ public class Category {
 
     @Column(name = "is_active")
     private Boolean isActive;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 }

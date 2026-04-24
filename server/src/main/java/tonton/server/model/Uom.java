@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,19 +21,19 @@ public class Uom {
 
     @Column(length = 20)
     private String symbol;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "baseUom")
     private List<Product> products;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "uom")
     private List<QuoteItem> quoteItems;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "uom")
     private List<OrderItem> orderItems;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "fromUom")
     private List<UomConversion> fromConversions;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "toUom")
     private List<UomConversion> toConversions;
 }

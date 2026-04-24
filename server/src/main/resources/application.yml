@@ -12,3 +12,23 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    open-in-view: false
+
+app:
+  cors:
+    allowed-origins:
+      - http://localhost:3000
+    allowed-methods:
+      - GET
+      - POST
+      - PUT
+      - PATCH
+      - DELETE
+      - OPTIONS
+    allowed-headers:
+      - "*"
+    exposed-headers:
+      - Authorization
+      - Content-Type
+    allow-credentials: true
+    max-age: 3600

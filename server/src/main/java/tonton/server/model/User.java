@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +33,7 @@ public class User extends BaseEntity {
     private String username;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -40,16 +42,16 @@ public class User extends BaseEntity {
 
     @Column(name = "token_version")
     private Integer tokenVersion;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Quote> quotes;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<UserAddress> userAddresses;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "author")
     private List<Post> posts;
 }

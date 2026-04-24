@@ -1,6 +1,7 @@
 package tonton.server.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +41,21 @@ public class GlobalExceptionHandler {
                 details.put(fieldError.getField(), fieldError.getDefaultMessage());
             }
         }
+
+        return buildResponse(
+                HttpStatus.BAD_REQUEST,
+                ErrorCode.VALIDATION_ERROR,
+                "Validation failed",
+                request,
+                details
+        );
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<ErrorResponse> handleConstraintViolation(ConstraintViolationException ex, HttpServletRequest request) {
+        Map<String, String> details = new LinkedHashMap<>();
+        ex.getConstraintViolations()
+                .forEach(violation -> details.put(violation.getPropertyPath().toString(), violation.getMessage()));
 
         return buildResponse(
                 HttpStatus.BAD_REQUEST,

@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,19 +43,19 @@ public class Product extends BaseEntity {
 
     @Column(name = "is_active")
     private Boolean isActive;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<ProductImage> productImages;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<UomConversion> uomConversions;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<PriceTier> priceTiers;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<QuoteItem> quoteItems;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems;
 }

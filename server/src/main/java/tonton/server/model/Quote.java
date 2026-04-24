@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,10 +27,10 @@ public class Quote extends BaseEntity {
 
     @Column(columnDefinition = "TEXT")
     private String note;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "quote")
     private List<QuoteItem> quoteItems;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "quote")
     private List<Order> orders;
 }

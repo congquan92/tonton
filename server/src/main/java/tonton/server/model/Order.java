@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -46,7 +47,7 @@ public class Order extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", length = 50)
     private PaymentMethod paymentMethod = PaymentMethod.COD;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems;
 }

@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,10 +23,10 @@ public class Role {
 
     @Column(length = 255)
     private String description;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "role")
     private List<User> users;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "role")
     private List<PriceTier> priceTiers;
 }

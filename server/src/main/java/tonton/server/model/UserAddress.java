@@ -1,5 +1,6 @@
 package tonton.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +34,7 @@ public class UserAddress {
 
     @Column(name = "is_default")
     private Boolean isDefault;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "shippingAddress")
     private List<Order> orders;
 }
