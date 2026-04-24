@@ -1,0 +1,15 @@
+services:
+    db:
+        image: postgres:latest
+        container_name: postgres_db_tonton
+        environment:
+            POSTGRES_USER: anhquan
+            POSTGRES_PASSWORD: anhquandeptrai
+            POSTGRES_DB: tonton
+        ports:
+            - "5434:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql
+
+volumes:
+    postgres_data:

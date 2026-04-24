@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: server
+
+  datasource:
+    url: jdbc:postgresql://localhost:5434/tonton
+    username: anhquan
+    password: anhquandeptrai
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
