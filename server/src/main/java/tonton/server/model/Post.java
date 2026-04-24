@@ -3,6 +3,7 @@ package tonton.server.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import tonton.server.common.enums.PostStatus;
 
 import java.time.LocalDateTime;
 
@@ -38,8 +39,9 @@ public class Post extends BaseEntity {
     @JoinColumn(name = "author_id")
     private User author;
 
+    @Enumerated(EnumType.STRING)
     @Column(length = 20)
-    private String status;
+    private PostStatus status = PostStatus.DRAFT;
 
     @Column(name = "view_count")
     private Integer viewCount;

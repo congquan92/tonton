@@ -3,6 +3,7 @@ package tonton.server.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import tonton.server.common.enums.QuoteStatus;
 
 import java.util.List;
 
@@ -19,8 +20,9 @@ public class Quote extends BaseEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Enumerated(EnumType.STRING)
     @Column(length = 50)
-    private String status;
+    private QuoteStatus status = QuoteStatus.PENDING_CALL;
 
     @Column(columnDefinition = "TEXT")
     private String note;

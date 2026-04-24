@@ -1,4 +1,4 @@
-package tonton.server.exception;
+package tonton.server.common.enums;
 
 public enum ErrorCode {
     BAD_REQUEST,

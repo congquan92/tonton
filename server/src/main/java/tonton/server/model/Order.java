@@ -3,6 +3,8 @@ package tonton.server.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import tonton.server.common.enums.OrderStatus;
+import tonton.server.common.enums.PaymentMethod;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -37,11 +39,13 @@ public class Order extends BaseEntity {
     @Column(name = "shipping_address_snapshot", nullable = false, columnDefinition = "TEXT")
     private String shippingAddressSnapshot;
 
+    @Enumerated(EnumType.STRING)
     @Column(length = 50)
-    private String status;
+    private OrderStatus status = OrderStatus.PROCESSING;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", length = 50)
-    private String paymentMethod;
+    private PaymentMethod paymentMethod = PaymentMethod.COD;
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems;

@@ -3,6 +3,7 @@ package tonton.server.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import tonton.server.common.enums.RoleName;
 
 import java.util.List;
 
@@ -15,8 +16,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, unique = true, length = 50)
-    private String name;
+    private RoleName name;
 
     @Column(length = 255)
     private String description;
