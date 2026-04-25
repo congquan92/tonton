@@ -43,7 +43,7 @@ public class JwtService {
                     .parseSignedClaims(token)
                     .getPayload();
         } catch (JwtException | IllegalArgumentException ex) {
-            throw new UnauthorizedException("Invalid or expired token");
+            throw new UnauthorizedException("Token không hợp lệ hoặc đã hết hạn");
         }
     }
 

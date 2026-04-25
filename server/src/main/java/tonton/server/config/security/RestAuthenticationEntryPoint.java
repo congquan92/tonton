@@ -32,7 +32,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
                 HttpStatus.UNAUTHORIZED.value(),
                 HttpStatus.UNAUTHORIZED.getReasonPhrase(),
                 ErrorCode.UNAUTHORIZED.name(),
-                "Authentication failed",
+                "Xác thực thất bại",
                 request.getRequestURI(),
                 null
         );

@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PhoneNumber {
-    String message() default "Invalid phone number format";
+    String message() default "Số điện thoại không đúng định dạng";
 
     Class<?>[] groups() default {};
 

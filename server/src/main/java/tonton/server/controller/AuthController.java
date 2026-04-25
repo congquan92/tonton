@@ -53,7 +53,7 @@ public class AuthController {
 
     private String extractUsername(Authentication authentication) {
         if (authentication == null || !(authentication.getPrincipal() instanceof AppUserPrincipal principal)) {
-            throw new UnauthorizedException("Authentication required");
+            throw new UnauthorizedException("Cần đăng nhập để thực hiện chức năng này");
         }
         return principal.getUsername();
     }

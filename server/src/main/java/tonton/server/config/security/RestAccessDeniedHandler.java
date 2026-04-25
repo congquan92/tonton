@@ -32,7 +32,7 @@ public class RestAccessDeniedHandler implements AccessDeniedHandler {
                 HttpStatus.FORBIDDEN.value(),
                 HttpStatus.FORBIDDEN.getReasonPhrase(),
                 ErrorCode.FORBIDDEN.name(),
-                "Access denied",
+                "Bạn không có quyền truy cập",
                 request.getRequestURI(),
                 null
         );

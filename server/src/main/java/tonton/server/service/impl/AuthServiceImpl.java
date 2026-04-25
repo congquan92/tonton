@@ -40,7 +40,7 @@ public class AuthServiceImpl implements AuthService {
         validateRegisterRequest(request);
 
         Role defaultRole = roleRepository.findByName(RoleName.B2C)
-                .orElseThrow(() -> new NotFoundException("Default role B2C not found"));
+                .orElseThrow(() -> new NotFoundException("Không tìm thấy vai trò mặc định B2C"));
 
         User user = new User();
         user.setPhoneNumber(request.getPhoneNumber());
@@ -62,10 +62,10 @@ public class AuthServiceImpl implements AuthService {
         String usernameOrEmail = request.getUsernameOrEmail().trim();
         User user = userRepository.findByUsername(usernameOrEmail)
                 .or(() -> userRepository.findByEmail(usernameOrEmail))
-                .orElseThrow(() -> new UnauthorizedException("Invalid username/email or password"));
+                .orElseThrow(() -> new UnauthorizedException("Tên đăng nhập/email hoặc mật khẩu không đúng"));
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-            throw new UnauthorizedException("Invalid username/email or password");
+            throw new UnauthorizedException("Tên đăng nhập/email hoặc mật khẩu không đúng");
         }
 
         return buildAuthResponse(user);
@@ -78,14 +78,14 @@ public class AuthServiceImpl implements AuthService {
         Claims claims = jwtService.parseClaims(refreshToken);
         String username = claims.getSubject();
         if (username == null || username.isBlank()) {
-            throw new UnauthorizedException("Invalid refresh token");
+            throw new UnauthorizedException("Refresh token không hợp lệ");
         }
 
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UnauthorizedException("Invalid refresh token"));
+                .orElseThrow(() -> new UnauthorizedException("Refresh token không hợp lệ"));
 
         if (!jwtService.isTokenValid(refreshToken, TokenType.REFRESH, user)) {
-            throw new UnauthorizedException("Invalid refresh token");
+            throw new UnauthorizedException("Refresh token không hợp lệ");
         }
 
         return buildAuthResponse(user);
@@ -95,7 +95,7 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public void logout(String username) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UnauthorizedException("User not found"));
+                .orElseThrow(() -> new UnauthorizedException("Không tìm thấy người dùng"));
 
         int tokenVersion = user.getTokenVersion() == null ? 1 : user.getTokenVersion();
         user.setTokenVersion(tokenVersion + 1);
@@ -106,22 +106,22 @@ public class AuthServiceImpl implements AuthService {
     @Transactional(readOnly = true)
     public AuthUserResponse me(String username) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UnauthorizedException("User not found"));
+                .orElseThrow(() -> new UnauthorizedException("Không tìm thấy người dùng"));
         return toAuthUserResponse(user);
     }
 
     private void validateRegisterRequest(AuthRegisterRequest request) {
         if (userRepository.existsByUsername(request.getUsername())) {
-            throw new ConflictException("Username already exists");
+            throw new ConflictException("Tên đăng nhập đã tồn tại");
         }
         if (userRepository.existsByEmail(request.getEmail())) {
-            throw new ConflictException("Email already exists");
+            throw new ConflictException("Email đã tồn tại");
         }
         if (userRepository.existsByPhoneNumber(request.getPhoneNumber())) {
-            throw new ConflictException("Phone number already exists");
+            throw new ConflictException("Số điện thoại đã tồn tại");
         }
         if (request.getPassword() == null || request.getPassword().length() < 6) {
-            throw new BadRequestException("Password must contain at least 6 characters");
+            throw new BadRequestException("Mật khẩu phải có ít nhất 6 ký tự");
         }
     }
 
@@ -138,7 +138,7 @@ public class AuthServiceImpl implements AuthService {
 
     private AuthUserResponse toAuthUserResponse(User user) {
         if (user.getRole() == null || user.getRole().getName() == null) {
-            throw new BadRequestException("User role is not configured");
+            throw new BadRequestException("Vai trò người dùng chưa được cấu hình");
         }
         return AuthUserResponse.builder()
                 .id(user.getId())

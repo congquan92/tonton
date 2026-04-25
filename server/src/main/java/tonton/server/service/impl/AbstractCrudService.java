@@ -26,7 +26,7 @@ public abstract class AbstractCrudService<T> implements CrudService<T> {
     @Transactional(readOnly = true)
     public T getById(Long id) {
         return getRepository().findById(id)
-                .orElseThrow(() -> new NotFoundException(getEntityName() + " not found with id: " + id));
+                .orElseThrow(() -> new NotFoundException("Không tìm thấy " + getEntityName() + " với id: " + id));
     }
 
     @Override

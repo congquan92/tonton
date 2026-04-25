@@ -45,7 +45,7 @@ public class GlobalExceptionHandler {
         return buildResponse(
                 HttpStatus.BAD_REQUEST,
                 ErrorCode.VALIDATION_ERROR,
-                "Validation failed",
+                "Dữ liệu không hợp lệ",
                 request,
                 details
         );
@@ -60,7 +60,7 @@ public class GlobalExceptionHandler {
         return buildResponse(
                 HttpStatus.BAD_REQUEST,
                 ErrorCode.VALIDATION_ERROR,
-                "Validation failed",
+                "Dữ liệu không hợp lệ",
                 request,
                 details
         );
@@ -68,16 +68,18 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponse> handleTypeMismatch(MethodArgumentTypeMismatchException ex, HttpServletRequest request) {
-        String message = "Invalid value for parameter: " + ex.getName();
+        String message = "Giá trị không hợp lệ cho tham số: " + ex.getName();
         return buildResponse(HttpStatus.BAD_REQUEST, ErrorCode.BAD_REQUEST, message, request, null);
     }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<ErrorResponse> handleMethodNotAllowed(HttpRequestMethodNotSupportedException ex, HttpServletRequest request) {
+        String message = "Phương thức " + ex.getMethod() + " không được hỗ trợ cho endpoint này";
         return buildResponse(
                 HttpStatus.METHOD_NOT_ALLOWED,
                 ErrorCode.METHOD_NOT_ALLOWED,
-                ex.getMessage(),
+                message,
+               //ex.getMessage(),
                 request,
                 null
         );
@@ -88,7 +90,7 @@ public class GlobalExceptionHandler {
         return buildResponse(
                 HttpStatus.CONFLICT,
                 ErrorCode.CONFLICT,
-                "Data integrity violation",
+                "Dữ liệu bị xung đột hoặc vi phạm ràng buộc",
                 request,
                 null
         );
@@ -99,7 +101,7 @@ public class GlobalExceptionHandler {
         return buildResponse(
                 HttpStatus.FORBIDDEN,
                 ErrorCode.FORBIDDEN,
-                "Access denied",
+                "Bạn không có quyền truy cập",
                 request,
                 null
         );
@@ -110,7 +112,7 @@ public class GlobalExceptionHandler {
         return buildResponse(
                 HttpStatus.UNAUTHORIZED,
                 ErrorCode.UNAUTHORIZED,
-                "Authentication failed",
+                "Xác thực thất bại",
                 request,
                 null
         );
@@ -121,7 +123,7 @@ public class GlobalExceptionHandler {
         return buildResponse(
                 HttpStatus.BAD_REQUEST,
                 ErrorCode.BAD_REQUEST,
-                "Malformed JSON request",
+                "Dữ liệu JSON không đúng định dạng",
                 request,
                 null
         );
@@ -132,7 +134,7 @@ public class GlobalExceptionHandler {
         return buildResponse(
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 ErrorCode.INTERNAL_SERVER_ERROR,
-                "Unexpected internal error",
+                "Đã xảy ra lỗi nội bộ không mong muốn",
                 request,
                 null
         );
