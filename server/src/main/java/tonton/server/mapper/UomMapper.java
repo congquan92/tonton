@@ -1,8 +1,8 @@
 package tonton.server.mapper;
 
 import tonton.server.model.Uom;
-import tonton.server.controller.request.UomRequest;
-import tonton.server.controller.response.UomResponse;
+import tonton.server.controller.request.uom.UomRequest;
+import tonton.server.controller.response.uom.UomResponse;
 
 public final class UomMapper {
     private UomMapper() {

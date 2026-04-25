@@ -2,8 +2,8 @@ package tonton.server.mapper;
 
 import tonton.server.model.User;
 import tonton.server.model.UserAddress;
-import tonton.server.controller.request.UserAddressRequest;
-import tonton.server.controller.response.UserAddressResponse;
+import tonton.server.controller.request.user.UserAddressRequest;
+import tonton.server.controller.response.user.UserAddressResponse;
 
 public final class UserAddressMapper {
     private UserAddressMapper() {

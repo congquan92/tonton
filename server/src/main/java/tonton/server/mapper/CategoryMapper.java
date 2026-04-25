@@ -1,8 +1,8 @@
 package tonton.server.mapper;
 
 import tonton.server.model.Category;
-import tonton.server.controller.request.CategoryRequest;
-import tonton.server.controller.response.CategoryResponse;
+import tonton.server.controller.request.category.CategoryRequest;
+import tonton.server.controller.response.category.CategoryResponse;
 
 public final class CategoryMapper {
     private CategoryMapper() {

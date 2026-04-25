@@ -32,3 +32,14 @@ app:
       - Content-Type
     allow-credentials: true
     max-age: 3600
+  jwt:
+    secret: "replace-this-with-a-long-random-secret-for-production-use-please-1234567890"
+    access-token-expiration-ms: 900000
+    refresh-token-expiration-ms: 2592000000
+  bootstrap-admin:
+    enabled: true
+    username: admin
+    password: admin123
+    email: nguyencongquan9211@gmail.com
+    full-name: Nguyễn Công Quân
+    phone-number: 0345658495

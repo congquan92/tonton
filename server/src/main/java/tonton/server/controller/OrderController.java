@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.OrderMapper;
 import tonton.server.model.Order;
-import tonton.server.controller.request.OrderRequest;
-import tonton.server.controller.response.OrderResponse;
+import tonton.server.controller.request.order.OrderRequest;
+import tonton.server.controller.response.order.OrderResponse;
 import tonton.server.service.OrderService;
 
 import java.util.List;

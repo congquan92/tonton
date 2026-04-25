@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.QuoteItemMapper;
 import tonton.server.model.QuoteItem;
-import tonton.server.controller.request.QuoteItemRequest;
-import tonton.server.controller.response.QuoteItemResponse;
+import tonton.server.controller.request.quote.QuoteItemRequest;
+import tonton.server.controller.response.quote.QuoteItemResponse;
 import tonton.server.service.QuoteItemService;
 
 import java.util.List;

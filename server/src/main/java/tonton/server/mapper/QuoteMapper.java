@@ -2,8 +2,8 @@ package tonton.server.mapper;
 
 import tonton.server.model.Quote;
 import tonton.server.model.User;
-import tonton.server.controller.request.QuoteRequest;
-import tonton.server.controller.response.QuoteResponse;
+import tonton.server.controller.request.quote.QuoteRequest;
+import tonton.server.controller.response.quote.QuoteResponse;
 
 public final class QuoteMapper {
     private QuoteMapper() {

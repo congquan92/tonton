@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.PriceTierMapper;
 import tonton.server.model.PriceTier;
-import tonton.server.controller.request.PriceTierRequest;
-import tonton.server.controller.response.PriceTierResponse;
+import tonton.server.controller.request.product.PriceTierRequest;
+import tonton.server.controller.response.product.PriceTierResponse;
 import tonton.server.service.PriceTierService;
 
 import java.util.List;

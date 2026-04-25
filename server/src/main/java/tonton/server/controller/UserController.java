@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.UserMapper;
 import tonton.server.model.User;
-import tonton.server.controller.request.UserRequest;
-import tonton.server.controller.response.UserResponse;
+import tonton.server.controller.request.user.UserRequest;
+import tonton.server.controller.response.user.UserResponse;
 import tonton.server.service.UserService;
 
 import java.util.List;

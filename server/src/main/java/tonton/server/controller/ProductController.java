@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.ProductMapper;
 import tonton.server.model.Product;
-import tonton.server.controller.request.ProductRequest;
-import tonton.server.controller.response.ProductResponse;
+import tonton.server.controller.request.product.ProductRequest;
+import tonton.server.controller.response.product.ProductResponse;
 import tonton.server.service.ProductService;
 
 import java.util.List;

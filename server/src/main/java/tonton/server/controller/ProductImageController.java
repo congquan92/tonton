@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.ProductImageMapper;
 import tonton.server.model.ProductImage;
-import tonton.server.controller.request.ProductImageRequest;
-import tonton.server.controller.response.ProductImageResponse;
+import tonton.server.controller.request.product.ProductImageRequest;
+import tonton.server.controller.response.product.ProductImageResponse;
 import tonton.server.service.ProductImageService;
 
 import java.util.List;

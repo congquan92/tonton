@@ -4,8 +4,8 @@ import tonton.server.model.Order;
 import tonton.server.model.OrderItem;
 import tonton.server.model.Product;
 import tonton.server.model.Uom;
-import tonton.server.controller.request.OrderItemRequest;
-import tonton.server.controller.response.OrderItemResponse;
+import tonton.server.controller.request.order.OrderItemRequest;
+import tonton.server.controller.response.order.OrderItemResponse;
 
 public final class OrderItemMapper {
     private OrderItemMapper() {

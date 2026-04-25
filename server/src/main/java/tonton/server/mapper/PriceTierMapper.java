@@ -3,8 +3,8 @@ package tonton.server.mapper;
 import tonton.server.model.PriceTier;
 import tonton.server.model.Product;
 import tonton.server.model.Role;
-import tonton.server.controller.request.PriceTierRequest;
-import tonton.server.controller.response.PriceTierResponse;
+import tonton.server.controller.request.product.PriceTierRequest;
+import tonton.server.controller.response.product.PriceTierResponse;
 
 public final class PriceTierMapper {
     private PriceTierMapper() {

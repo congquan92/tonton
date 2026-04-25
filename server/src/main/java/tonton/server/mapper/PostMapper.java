@@ -3,8 +3,8 @@ package tonton.server.mapper;
 import tonton.server.model.Post;
 import tonton.server.model.PostCategory;
 import tonton.server.model.User;
-import tonton.server.controller.request.PostRequest;
-import tonton.server.controller.response.PostResponse;
+import tonton.server.controller.request.post.PostRequest;
+import tonton.server.controller.response.post.PostResponse;
 
 public final class PostMapper {
     private PostMapper() {

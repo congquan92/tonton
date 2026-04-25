@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.RoleMapper;
 import tonton.server.model.Role;
-import tonton.server.controller.request.RoleRequest;
-import tonton.server.controller.response.RoleResponse;
+import tonton.server.controller.request.role.RoleRequest;
+import tonton.server.controller.response.role.RoleResponse;
 import tonton.server.service.RoleService;
 
 import java.util.List;

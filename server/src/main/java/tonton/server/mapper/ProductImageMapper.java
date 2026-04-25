@@ -2,8 +2,8 @@ package tonton.server.mapper;
 
 import tonton.server.model.Product;
 import tonton.server.model.ProductImage;
-import tonton.server.controller.request.ProductImageRequest;
-import tonton.server.controller.response.ProductImageResponse;
+import tonton.server.controller.request.product.ProductImageRequest;
+import tonton.server.controller.response.product.ProductImageResponse;
 
 public final class ProductImageMapper {
     private ProductImageMapper() {

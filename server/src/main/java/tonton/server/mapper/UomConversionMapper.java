@@ -3,8 +3,8 @@ package tonton.server.mapper;
 import tonton.server.model.Product;
 import tonton.server.model.Uom;
 import tonton.server.model.UomConversion;
-import tonton.server.controller.request.UomConversionRequest;
-import tonton.server.controller.response.UomConversionResponse;
+import tonton.server.controller.request.uom.UomConversionRequest;
+import tonton.server.controller.response.uom.UomConversionResponse;
 
 public final class UomConversionMapper {
     private UomConversionMapper() {

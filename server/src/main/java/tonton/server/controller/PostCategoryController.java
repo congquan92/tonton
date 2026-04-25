@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.PostCategoryMapper;
 import tonton.server.model.PostCategory;
-import tonton.server.controller.request.PostCategoryRequest;
-import tonton.server.controller.response.PostCategoryResponse;
+import tonton.server.controller.request.post.PostCategoryRequest;
+import tonton.server.controller.response.post.PostCategoryResponse;
 import tonton.server.service.PostCategoryService;
 
 import java.util.List;

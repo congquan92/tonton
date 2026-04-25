@@ -1,8 +1,8 @@
 package tonton.server.mapper;
 
 import tonton.server.model.PostCategory;
-import tonton.server.controller.request.PostCategoryRequest;
-import tonton.server.controller.response.PostCategoryResponse;
+import tonton.server.controller.request.post.PostCategoryRequest;
+import tonton.server.controller.response.post.PostCategoryResponse;
 
 public final class PostCategoryMapper {
     private PostCategoryMapper() {

@@ -1,0 +1,20 @@
+package tonton.server.controller.request.post;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class PostCategoryRequest {
+    @NotBlank
+    @Size(max = 100)
+    private String name;
+
+    @NotBlank
+    @Size(max = 100)
+    private String slug;
+
+    private Boolean isActive;
+}

@@ -4,8 +4,8 @@ import tonton.server.model.Product;
 import tonton.server.model.Quote;
 import tonton.server.model.QuoteItem;
 import tonton.server.model.Uom;
-import tonton.server.controller.request.QuoteItemRequest;
-import tonton.server.controller.response.QuoteItemResponse;
+import tonton.server.controller.request.quote.QuoteItemRequest;
+import tonton.server.controller.response.quote.QuoteItemResponse;
 
 public final class QuoteItemMapper {
     private QuoteItemMapper() {

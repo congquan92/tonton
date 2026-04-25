@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.UserAddressMapper;
 import tonton.server.model.UserAddress;
-import tonton.server.controller.request.UserAddressRequest;
-import tonton.server.controller.response.UserAddressResponse;
+import tonton.server.controller.request.user.UserAddressRequest;
+import tonton.server.controller.response.user.UserAddressResponse;
 import tonton.server.service.UserAddressService;
 
 import java.util.List;

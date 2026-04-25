@@ -4,8 +4,8 @@ import tonton.server.model.Order;
 import tonton.server.model.Quote;
 import tonton.server.model.User;
 import tonton.server.model.UserAddress;
-import tonton.server.controller.request.OrderRequest;
-import tonton.server.controller.response.OrderResponse;
+import tonton.server.controller.request.order.OrderRequest;
+import tonton.server.controller.response.order.OrderResponse;
 
 public final class OrderMapper {
     private OrderMapper() {

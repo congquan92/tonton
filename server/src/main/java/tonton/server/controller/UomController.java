@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.UomMapper;
 import tonton.server.model.Uom;
-import tonton.server.controller.request.UomRequest;
-import tonton.server.controller.response.UomResponse;
+import tonton.server.controller.request.uom.UomRequest;
+import tonton.server.controller.response.uom.UomResponse;
 import tonton.server.service.UomService;
 
 import java.util.List;

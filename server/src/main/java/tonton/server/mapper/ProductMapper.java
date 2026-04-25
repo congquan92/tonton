@@ -3,8 +3,8 @@ package tonton.server.mapper;
 import tonton.server.model.Category;
 import tonton.server.model.Product;
 import tonton.server.model.Uom;
-import tonton.server.controller.request.ProductRequest;
-import tonton.server.controller.response.ProductResponse;
+import tonton.server.controller.request.product.ProductRequest;
+import tonton.server.controller.response.product.ProductResponse;
 
 public final class ProductMapper {
     private ProductMapper() {

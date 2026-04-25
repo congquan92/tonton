@@ -1,8 +1,8 @@
 package tonton.server.mapper;
 
 import tonton.server.model.Role;
-import tonton.server.controller.request.RoleRequest;
-import tonton.server.controller.response.RoleResponse;
+import tonton.server.controller.request.role.RoleRequest;
+import tonton.server.controller.response.role.RoleResponse;
 
 public final class RoleMapper {
     private RoleMapper() {

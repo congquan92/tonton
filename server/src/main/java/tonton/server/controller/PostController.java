@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tonton.server.mapper.PostMapper;
 import tonton.server.model.Post;
-import tonton.server.controller.request.PostRequest;
-import tonton.server.controller.response.PostResponse;
+import tonton.server.controller.request.post.PostRequest;
+import tonton.server.controller.response.post.PostResponse;
 import tonton.server.service.PostService;
 
 import java.util.List;
