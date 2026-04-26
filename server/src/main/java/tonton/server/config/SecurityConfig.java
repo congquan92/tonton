@@ -73,7 +73,8 @@ public class SecurityConfig {
                                 "/api/post-categories/**",
                                 "/api/product-images/**",
                                 "/api/price-tiers/**",
-                                "/api/uom-conversions/**"
+                                "/api/uom-conversions/**",
+                                "/api/uploads/**"
                         ).hasAnyRole("ADMIN", "SALE")
                         .requestMatchers(HttpMethod.PUT,
                                 "/api/products/**",

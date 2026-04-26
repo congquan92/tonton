@@ -11,7 +11,6 @@ import tonton.server.config.security.jwt.JwtService;
 import tonton.server.config.security.jwt.TokenType;
 import tonton.server.controller.request.auth.AuthLoginRequest;
 import tonton.server.controller.request.auth.AuthRegisterRequest;
-import tonton.server.controller.request.auth.RefreshTokenRequest;
 import tonton.server.controller.response.auth.AuthResponse;
 import tonton.server.controller.response.auth.AuthUserResponse;
 import tonton.server.exception.BadRequestException;
@@ -73,8 +72,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     @Transactional(readOnly = true)
-    public AuthResponse refresh(RefreshTokenRequest request) {
-        String refreshToken = stripBearerPrefix(request.getRefreshToken());
+    public AuthResponse refresh(String refreshToken) {
         Claims claims = jwtService.parseClaims(refreshToken);
         String username = claims.getSubject();
         if (username == null || username.isBlank()) {
@@ -129,10 +127,7 @@ public class AuthServiceImpl implements AuthService {
         return AuthResponse.builder()
                 .accessToken(jwtService.generateAccessToken(user))
                 .refreshToken(jwtService.generateRefreshToken(user))
-                .tokenType("Bearer")
                 .accessTokenExpiresInMs(jwtProperties.getAccessTokenExpirationMs())
-                .refreshTokenExpiresInMs(jwtProperties.getRefreshTokenExpirationMs())
-                .user(toAuthUserResponse(user))
                 .build();
     }
 
@@ -148,15 +143,5 @@ public class AuthServiceImpl implements AuthService {
                 .role(user.getRole().getName())
                 .build();
     }
-
-    private String stripBearerPrefix(String token) {
-        if (token == null) {
-            return null;
-        }
-        String trimmed = token.trim();
-        if (trimmed.regionMatches(true, 0, "Bearer ", 0, 7)) {
-            return trimmed.substring(7).trim();
-        }
-        return trimmed;
-    }
 }
+

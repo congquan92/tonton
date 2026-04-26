@@ -13,7 +13,7 @@ public class CorsProperties {
     private List<String> allowedOrigins = List.of("http://localhost:3000");
     private List<String> allowedMethods = List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
     private List<String> allowedHeaders = List.of("*");
-    private List<String> exposedHeaders = List.of("Authorization", "Content-Type");
+    private List<String> exposedHeaders = List.of("Content-Type");
     private boolean allowCredentials = true;
     private Long maxAge = 3600L;
 }
