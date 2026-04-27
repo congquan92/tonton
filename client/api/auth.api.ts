@@ -1,8 +1,5 @@
 import { axiosInstance, tokenStorage } from "@/lib/axios";
-import type {
-  AuthLoginRequest,
-  AuthRegisterRequest,
-} from "@/types/request";
+import type { AuthLoginRequest, AuthRegisterRequest } from "@/types/request";
 import type { AuthResponse, AuthUserResponse } from "@/types/response";
 
 export const authApi = {

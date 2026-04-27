@@ -1,16 +1,10 @@
 import { axiosInstance } from "@/lib/axios";
-import type {
-  ContactMessageRequest,
-  NewsletterSubscriptionRequest,
-} from "@/types/request";
+import type { ContactMessageRequest, NewsletterSubscriptionRequest } from "@/types/request";
 import type { LeadResponse } from "@/types/response";
 
 export const leadsApi = {
   async subscribeNewsletter(payload: NewsletterSubscriptionRequest): Promise<LeadResponse> {
-    const response = await axiosInstance.post<LeadResponse>(
-      "/public/newsletter-subscriptions",
-      payload,
-    );
+    const response = await axiosInstance.post<LeadResponse>("/public/newsletter-subscriptions", payload);
     return response.data;
   },
 
