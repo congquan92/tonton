@@ -58,7 +58,14 @@ public class SecurityConfig {
                                 "/api/categories/**",
                                 "/api/uoms/**",
                                 "/api/posts/**",
-                                "/api/post-categories/**"
+                                "/api/post-categories/**",
+                                "/api/projects/**",
+                                "/api/service-features/**",
+                                "/api/public/**"
+                        ).permitAll()
+                        .requestMatchers(HttpMethod.POST,
+                                "/api/public/newsletter-subscriptions",
+                                "/api/public/contact-messages"
                         ).permitAll()
 
                         // ADMIN 
@@ -74,6 +81,8 @@ public class SecurityConfig {
                                 "/api/product-images/**",
                                 "/api/price-tiers/**",
                                 "/api/uom-conversions/**",
+                                "/api/projects/**",
+                                "/api/service-features/**",
                                 "/api/uploads/**"
                         ).hasAnyRole("ADMIN", "SALE")
                         .requestMatchers(HttpMethod.PUT,
@@ -84,7 +93,9 @@ public class SecurityConfig {
                                 "/api/post-categories/**",
                                 "/api/product-images/**",
                                 "/api/price-tiers/**",
-                                "/api/uom-conversions/**"
+                                "/api/uom-conversions/**",
+                                "/api/projects/**",
+                                "/api/service-features/**"
                         ).hasAnyRole("ADMIN", "SALE")
                         .requestMatchers(HttpMethod.DELETE,
                                 "/api/products/**",
@@ -94,7 +105,9 @@ public class SecurityConfig {
                                 "/api/post-categories/**",
                                 "/api/product-images/**",
                                 "/api/price-tiers/**",
-                                "/api/uom-conversions/**"
+                                "/api/uom-conversions/**",
+                                "/api/projects/**",
+                                "/api/service-features/**"
                         ).hasAnyRole("ADMIN", "SALE")
 
                         .requestMatchers("/api/auth/logout", "/api/auth/me").authenticated()
