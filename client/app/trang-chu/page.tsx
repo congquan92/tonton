@@ -1,5 +1,5 @@
-import CategoryGrid from "@/app/trangchu/_components/CategoryGrid";
-import Hero from "@/app/trangchu/_components/Hero";
+import CategoryGrid from "@/app/trang-chu/_components/CategoryGrid";
+import Hero from "@/app/trang-chu/_components/Hero";
 import { Header } from "@/components/layout/Header";
 
 export default function Home() {
